@@ -1,0 +1,31 @@
+configuration {
+  display-drun: "Applications";
+  drun-display-format: "{icon} {name}";
+  font: "JetBrainsMono Nerd Font Medium 10";
+  show-icons: true;
+  icon-theme: "Papirus";
+  modi:"window,run,drun";
+
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+window{
+  width: 45%;
+  height:50%;
+}
+
+listview {
+    lines: 24;
+}
+
+
+/* Dark theme. */
+@import "~/.cache/wal/colors-rofi-dark"
