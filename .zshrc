@@ -1,3 +1,5 @@
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -70,7 +72,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -135,12 +140,15 @@ alias apu='sudo apt update && sudo apt upgrade'
 alias apr='sudo apt remove'
 alias sys='sudo systemctl'
 alias i3c='nvim ~/.config/i3/config'
+alias hypr='nvim ~/.config/hypr/hyprland.conf'
+alias pacs='sudo pacman -S'
+alias pacr='sudo pacman -R'
+alias yays='yay -S'
+alias yayr='yay -R'
 alias lf='lf --command "set hidden"'
-alias nnn='nnn -d -e -H -r && wal -Rq'
 export TIMEFMT=$'%E real\n%U user\n%S sys'
 pokemon-colorscripts -r
 export PATH="${PATH}:${HOME}/.local/bin/"
-wal -Rqn
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
@@ -166,4 +174,3 @@ export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
 export SDL_IM_MODULE="fcitx"
 export XMODIFIERS="@im=fcitx"
-
