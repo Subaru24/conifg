@@ -1,0 +1,87 @@
+@import url("/home/zecoa/.cache/wal/colors-waybar.css");
+
+
+window#waybar {
+    font-family: "JetBrains Mono NerdFont";
+    background: linear-gradient(45deg, @color14, @color2);
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    border-image: linear-gradient(45deg, @color14, @color2)
+}
+
+.modules-left, .modules-center {
+    opacity: 1;
+    padding: 2px;
+}
+
+.modules-right {
+    opacity: 1;
+    border-radius: 0.5rem;
+    padding: 2px 2px 2px 10px 
+}
+
+/* label.module {
+    margin-left: -1px;
+} */
+
+#workspaces {
+    border-radius: 0.5rem;
+    padding: 0 2px;
+    color: @color1
+  }
+
+#workspaces button {
+    font-size: 0.6rem;
+    padding: 0 0.3rem 0 0;
+}
+
+#window {
+    border-radius: 0.5rem;
+    padding: 2px 5px;
+    color: @color1
+}
+
+#clock {
+    font-weight: bolder;
+    border-radius: 0.5rem;
+    padding: 0 3px 0 0;
+}
+
+#battery {
+    color: lightgreen;
+}
+
+#memory {
+    color: lightpink;
+}
+
+#network {
+    color: lightblue;
+}
+
+#disk {
+    color: lightskyblue;
+}
+
+#cpu {
+    color: lightgoldenrodyellow;
+}
+
+#temperature {
+    color: lightslategray;
+}
+
+#custom-media {
+    background-color: rgba(0,0,0,0.5);
+    color: rgb(106,220,215);
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: rgba(0,0,0,0)
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
