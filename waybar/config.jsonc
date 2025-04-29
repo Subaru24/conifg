@@ -1,0 +1,127 @@
+{   
+    "name": "bar0",
+    
+    "layer": "top",
+    "position": "top",
+
+    "height": 10,
+    // "width": 1920,
+
+    "margin": "5",
+    "spacing": 10,
+    
+    "mode": "top",
+    // "exclusive": true,
+
+
+    "reload_style_on_change": true,
+
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-center": ["custom/media"],
+    "modules-right": [
+        "wireplumber",
+        "battery",
+        "network",
+        "disk",
+        "memory",
+        "cpu",
+        "clock"
+    ],
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰛊 ",
+            "deactivated": "󰾫 "
+        }
+    },
+
+    "backlight": {
+        "interval": 2,
+        "format": "󰖨 {percent}%",
+        "on-scroll-up": "brightnessctl set +4",
+        "on-scroll-down": "brightnessctl set 4-"
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 ",
+        "on-click": "amixer sset Master toggle",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "battery": {
+        "interval": 10,
+        "format": "{icon}{capacity}%",
+        "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+        "tooltip": true,
+        "tooltip-format": "{timeTo}"
+    },
+
+    "disk": {
+        "intervel": 30,
+        "format": "󰋊 {percentage_used}%",
+        "tooltip-format": "{used} used out of {total} on \"{path}\" ({percentage_used}%)"
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": " {used}",
+        "tooltip-format": "{used}GiB used of {total}GiB ({percentage}%)"
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%"
+    },
+
+    "temperature": {
+        "interval": 10
+    },
+
+    "clock": {
+        "interval":1,
+        "format": "{:%H:%M:%S}"
+    },
+
+    "hyprland/workspaces": {
+        "show-special": true,
+        "persistent-workspaces": {
+            "*":[1,2]
+        },
+        "format": "{name}",
+        },
+     
+    "hyprland/window": {
+        "icon": true,
+        "icon-size": 22,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "$1 - 🦊",
+            "(.*) - Visual Studio Code": "$1 - 󰨞 ",
+            "(.*) - Discord": "$1 - 󰙯 ",
+            "^$": "👾"
+        }
+    },
+
+  "network": {
+          // "interface": "wlp2*", // (Optional) To force the use of this interface
+          "format-wifi": "{essid} ({signalStrength}%) ",
+          "tooltip-format": "{ifname} via {gwaddr} ",
+          "format-disconnected": "Disconnected ⚠",
+  },
+     "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}
